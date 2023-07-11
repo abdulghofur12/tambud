@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'PKTB JABAR',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 57, 18, 125)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       style: optionStyle,
     ),
     Text(
-      "",
+      '',
       style: optionStyle,
     ),
   ];
@@ -64,16 +65,16 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'galeri',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.photo),
+            label: 'Galeri',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            label: 'profile',
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,
