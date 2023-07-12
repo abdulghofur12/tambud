@@ -5,9 +5,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +14,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 57, 18, 125)),
+          seedColor: const Color.fromARGB(255, 57, 18, 125),
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -24,31 +24,15 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '',
-      style: optionStyle,
-    ),
-    Text(
-      '',
-      style: optionStyle,
-    ),
-    Text(
-      '',
-      style: optionStyle,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -56,11 +40,71 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List<Map<String, dynamic>> dataList = [
+    {
+      "judul": "Profile",
+      "isi":
+          "Taman Budaya Jawa Barat adalah sebuah pusat kebudayaan yang terletak di Jawa Barat, Indonesia. Tempat ini didedikasikan untuk melestarikan, mempromosikan, dan mengembangkan berbagai aspek kebudayaan Jawa Barat. Taman Budaya Jawa Barat menyajikan berbagai acara seni dan budaya yang meliputi pertunjukan musik, tari, teater, seni rupa, dan aktivitas budaya lainnya.Taman Budaya Jawa Barat adalah tempat yang penting dalam menghargai dan mempromosikan kekayaan budaya Jawa Barat. Dengan berbagai acara seni dan budaya yang diselenggarakan, tempat ini mengajak masyarakat untuk menghargai dan menikmati keindahan seni dan budaya tradisional, serta mendorong partisipasi aktif dalam melestarikan kebudayaan Jawa Barat untuk generasi mendatang.",
+      "gambar": "asset/3.jpg"
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: [
+          // Home Page
+          Center(
+            child: Container(
+              height: 500,
+              width: 350,
+              child: ListTile(
+                leading: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          // Galeri Page
+          Center(
+            child: Text(''),
+          ),
+
+          // Profile Page
+          Center(
+            child: Container(
+              height: 400,
+              width: 350,
+              child: Card(
+                elevation: 10,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      dataList[0]['judul'],
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Text(
+                      dataList[0]['isi'],
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
