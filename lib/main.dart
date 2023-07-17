@@ -81,26 +81,38 @@ class _MyHomePageState extends State<MyHomePage> {
           Center(
             child: Container(
               height: 400,
-              width: 350,
-              child: Card(
-                elevation: 10,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      dataList[0]['judul'],
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
+              width: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    elevation: 10,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          dataList[0]['judul'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Text(
+                          dataList[0]['isi'],
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 16),
-                    Text(
-                      dataList[0]['isi'],
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    child: Text('About...'),
+                  ),
+                ],
               ),
             ),
           ),
