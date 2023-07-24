@@ -89,14 +89,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         child: Container(
-                          width: 100,
+                          width: 150,
                           height: 100,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             image: DecorationImage(
-                              image: AssetImage('asset/image1.jpg'),
-                              fit: BoxFit.cover,
-                            ),
+                                image: AssetImage('asset/5.jpg'),
+                                fit: BoxFit.cover),
                           ),
                         ),
                       ),
@@ -113,12 +112,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         child: Container(
-                          width: 100,
+                          width: 150,
                           height: 100,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             image: DecorationImage(
-                              image: AssetImage('asset/image2.jpg'),
+                              image: AssetImage('asset/6.jpg'),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -149,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           // Handle image press
                         },
                         child: Card(
-                          elevation: 4,
+                          elevation: 6,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -158,8 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
-                                image:
-                                    AssetImage('asset/image${index + 1}.jpg'),
+                                image: AssetImage('asset/${index + 1}.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -199,8 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             image: DecorationImage(
-                              image:
-                                  AssetImage('asset/kuliner${index + 1}.jpg'),
+                              image: AssetImage('asset/${index + 1}.jpg'),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -212,7 +209,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-
           // Galeri Page
           Center(
             child: Text(''),
