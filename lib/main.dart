@@ -74,7 +74,82 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Galeri Page
           Center(
-            child: Text(''),
+            child: SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'asset/3.jpg',
+                          height: 70,
+                          width: 70,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Image 1",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "",
+                          height: 70,
+                          width: 70,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Image 2",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "",
+                          height: 70,
+                          width: 70,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Image 3",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
 
           // Profile Page
