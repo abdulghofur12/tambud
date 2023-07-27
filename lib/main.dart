@@ -155,8 +155,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // Profile Page
           Center(
             child: Container(
-              height: 400,
-              width: 400,
+              height: 650,
+              width: 450,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
