@@ -186,33 +186,120 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Galeri Page
           Center(
-            child: Text(''),
+            child: SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'asset/3.jpg',
+                          height: 70,
+                          width: 70,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Image 1",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "",
+                          height: 70,
+                          width: 70,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Image 2",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          "",
+                          height: 70,
+                          width: 70,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Image 3",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
 
           // Profile Page
           Center(
             child: Container(
               height: 400,
-              width: 350,
-              child: Card(
-                elevation: 10,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      dataList[0]['judul'],
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
+              width: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    elevation: 10,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          dataList[0]['judul'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Text(
+                          dataList[0]['isi'],
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 16),
-                    Text(
-                      dataList[0]['isi'],
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle button press
+                    },
+                    child: Text('About...'),
+                  ),
+                ],
               ),
             ),
           ),
