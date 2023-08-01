@@ -43,11 +43,19 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> dataList = [
     {
       "judul": "Profile",
-      "isi":
-          "Taman Budaya Jawa Barat adalah sebuah pusat kebudayaan yang terletak di Jawa Barat, Indonesia. Tempat ini didedikasikan untuk melestarikan, mempromosikan, dan mengembangkan berbagai aspek kebudayaan Jawa Barat. Taman Budaya Jawa Barat menyajikan berbagai acara seni dan budaya yang meliputi pertunjukan musik, tari, teater, seni rupa, dan aktivitas budaya lainnya.Taman Budaya Jawa Barat adalah tempat yang penting dalam menghargai dan mempromosikan kekayaan budaya Jawa Barat. Dengan berbagai acara seni dan budaya yang diselenggarakan, tempat ini mengajak masyarakat untuk menghargai dan menikmati keindahan seni dan budaya tradisional, serta mendorong partisipasi aktif dalam melestarikan kebudayaan Jawa Barat untuk generasi mendatang.",
+      "isi": "Taman Budaya Jawa Barat adalah sebuah pusat kebudayaan ...",
       "gambar": "asset/3.jpg"
     },
   ];
+
+  void _navigateToNewImagePage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NewImagePage(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
           // Home Page
           SingleChildScrollView(
             child: Center(
-              // Wrap the Container with Center widget
               child: Container(
                 height: 1500,
                 width: 500,
@@ -91,10 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: SizedBox(
-                                width:
-                                    150, // Ukuran lebar container sesuaikan dengan kebutuhan
-                                height:
-                                    100, // Ukuran tinggi container sesuaikan dengan kebutuhan
+                                width: 150,
+                                height: 100,
                                 child: Card(
                                   elevation: 6,
                                   shape: RoundedRectangleBorder(
@@ -113,18 +118,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          SizedBox(width: 16), // Adding space between the cards
+                          SizedBox(width: 16),
                           InkWell(
-                            onTap: () {
-                              // Handle button press
-                            },
+                            onTap:
+                                _navigateToNewImagePage, // Navigate to new page
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: SizedBox(
-                                width:
-                                    150, // Ukuran lebar container sesuaikan dengan kebutuhan
-                                height:
-                                    100, // Ukuran tinggi container sesuaikan dengan kebutuhan
+                                width: 150,
+                                height: 100,
                                 child: Card(
                                   elevation: 6,
                                   shape: RoundedRectangleBorder(
@@ -166,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Container(
                             width: 400,
-                            height: 200, // Height for the landscape photo
+                            height: 200,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(8),
@@ -178,12 +180,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          SizedBox(
-                              height:
-                                  8), // Adding space between the photos and the text
+                          SizedBox(height: 8),
                           Container(
                             width: 250,
-                            height: 500, // Height for the portrait photo
+                            height: 500,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(8),
@@ -206,153 +206,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Galeri Page
           Center(
-<<<<<<< HEAD
-              // ... Bagian kode sebelumnya ...
-=======
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Align(
-                alignment: Alignment.center, // Center the Column
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/3.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/5.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/7.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/1.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/2.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/4.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/1.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/2.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/4.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
->>>>>>> 0ef5894d24755b4918918b5751d699f151340535
+              // ... Galeri page content (if available) ...
               ),
 
           // Profile Page
           Center(
-<<<<<<< HEAD
-              // ... Bagian kode sebelumnya ...
-=======
-            child: Container(
-              height: 650,
-              width: 450,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Card(
-                    elevation: 10,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          dataList[0]['judul'],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          dataList[0]['isi'],
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle button press
-                    },
-                    child: Text('About...'),
-                  ),
-                ],
->>>>>>> 0ef5894d24755b4918918b5751d699f151340535
+              // ... Profile page content (if available) ...
               ),
         ],
       ),
@@ -380,6 +239,8 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class NewPage extends StatelessWidget {
+  // ... Existing code for the NewPage class ...
+
   // List data gambar dari assets untuk Hari Ini
   final List<String> imageListHariIni = [
     'asset/1.jpg',
@@ -416,7 +277,7 @@ class NewPage extends StatelessWidget {
             ),
           ),
           Container(
-            height: 150, // Tinggi kontainer sesuaikan dengan kebutuhan
+            height: 150,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: imageListHariIni.length,
@@ -424,10 +285,8 @@ class NewPage extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
-                    width:
-                        150, // Ukuran lebar container sesuaikan dengan kebutuhan
-                    height:
-                        150, // Ukuran tinggi container sesuaikan dengan kebutuhan
+                    width: 150,
+                    height: 150,
                     child: Card(
                       elevation: 6,
                       shape: RoundedRectangleBorder(
@@ -459,7 +318,7 @@ class NewPage extends StatelessWidget {
             ),
           ),
           Container(
-            height: 150, // Tinggi kontainer sesuaikan dengan kebutuhan
+            height: 150,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: imageListBesok.length,
@@ -467,10 +326,8 @@ class NewPage extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
-                    width:
-                        150, // Ukuran lebar container sesuaikan dengan kebutuhan
-                    height:
-                        150, // Ukuran tinggi container sesuaikan dengan kebutuhan
+                    width: 150,
+                    height: 150,
                     child: Card(
                       elevation: 6,
                       shape: RoundedRectangleBorder(
@@ -481,6 +338,123 @@ class NewPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                           image: DecorationImage(
                             image: AssetImage(imageListBesok[index]),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class NewImagePage extends StatelessWidget {
+  @override
+  // ... Existing code for the NewPage class ...
+
+  // List data gambar dari assets untuk Hari Ini
+  final List<String> imageList1 = [
+    'asset/1.jpg',
+    'asset/2.jpg',
+    'asset/3.jpg',
+    // Tambahkan gambar lainnya jika diperlukan
+  ];
+
+  // List data gambar dari assets untuk Besok
+  final List<String> imageList2 = [
+    'asset/4.jpg',
+    'asset/5.jpg',
+    'asset/6.jpg',
+    // Tambahkan gambar lainnya jika diperlukan
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Acara Terbuka'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Pagelaran',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Container(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: imageList1.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      elevation: 6,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                            image: AssetImage(imageList1[index]),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Kuliner',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Container(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: imageList2.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      elevation: 6,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                            image: AssetImage(imageList2[index]),
                             fit: BoxFit.cover,
                           ),
                         ),
