@@ -187,79 +187,106 @@ class _MyHomePageState extends State<MyHomePage> {
           // Galeri Page
           Center(
             child: SingleChildScrollView(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Card(
-                    elevation: 5,
-                    child: Column(
+              scrollDirection: Axis.horizontal,
+              child: Align(
+                alignment: Alignment.center, // Center the Column
+                child: Column(
+                  children: [
+                    Row(
                       children: [
-                        Image.asset(
-                          'asset/3.jpg',
-                          height: 70,
-                          width: 70,
-                          fit: BoxFit.cover,
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'asset/3.jpg',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Image 1",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                            ),
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/5.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/7.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    child: Column(
+                    Row(
                       children: [
-                        Image.asset(
-                          "",
-                          height: 70,
-                          width: 70,
-                          fit: BoxFit.cover,
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'asset/1.jpg',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Image 2",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                            ),
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/2.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/4.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    child: Column(
+                    Row(
                       children: [
-                        Image.asset(
-                          "",
-                          height: 70,
-                          width: 70,
-                          fit: BoxFit.cover,
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'asset/1.jpg',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Image 3",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                            ),
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/2.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/4.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
