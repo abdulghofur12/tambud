@@ -40,14 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List<Map<String, dynamic>> dataList = [
-    {
-      "judul": "Profile",
-      "isi": "Taman Budaya Jawa Barat adalah sebuah pusat kebudayaan ...",
-      "gambar": "asset/3.jpg"
-    },
-  ];
-
   void _navigateToNewImagePage() {
     Navigator.push(
       context,
@@ -175,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 bottomRight: Radius.circular(8),
                               ),
                               image: DecorationImage(
-                                image: AssetImage('asset/7.jpg'),
+                                image: AssetImage('asset/10.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -206,12 +198,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Galeri Page
           Center(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Column(
-                children: [
-                  Card(
-                    elevation: 5,
+            child: Column(
+              children: [
+                Card(
+                  elevation: 5,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         Padding(
@@ -244,8 +236,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  Card(
-                    elevation: 5,
+                ),
+                Card(
+                  elevation: 5,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         Padding(
@@ -278,8 +273,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  Card(
-                    elevation: 5,
+                ),
+                Card(
+                  elevation: 5,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         Padding(
@@ -312,50 +310,50 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
 
           // Profile Page
           Center(
             child: Container(
-              height: 400,
-              width: 700,
+              width: 350,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Card(
                     elevation: 10,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          dataList[0]['judul'],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          dataList[0]['isi'],
-                          textAlign: TextAlign.center,
-                        ),
+                        Image.asset("asset/9.jpg"),
+                        SizedBox(height: 5),
                       ],
                     ),
                   ),
                   SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle button press
-                    },
-                    child: Text('About...'),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          // Handle "About" button press
+                        },
+                        child: Text('About'),
+                      ),
+                      SizedBox(width: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          // Handle "Buku" button press
+                        },
+                        child: Text('Buku'),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
