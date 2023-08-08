@@ -230,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => ImageDetailPage(
-                                  imagePath: 'asset/7.jpg',
+                                  imagePath: 'asset/10.png',
                                 ),
                               ),
                             );
@@ -240,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
-                                image: AssetImage('asset/7.jpg'),
+                                image: AssetImage('asset/10.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -278,108 +278,160 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
 
           // Galeri Page
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Text(
-                      'Galeri',
-                      style: Theme.of(context).textTheme.headline6,
+          Center(
+            child: Column(
+              children: [
+                Card(
+                  elevation: 5,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'asset/3.jpg',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/5.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/7.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Row(
-                    children: [
-                      Image.asset(
-                        'asset/3.jpg',
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(width: 16),
-                      Image.asset(
-                        'asset/5.jpg',
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(width: 16),
-                      Image.asset(
-                        'asset/7.jpg',
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                    ],
+                ),
+                Card(
+                  elevation: 5,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'asset/1.jpg',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/2.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/4.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Image.asset(
-                        'asset/1.jpg',
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(width: 16),
-                      Image.asset(
-                        'asset/2.jpg',
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(width: 16),
-                      Image.asset(
-                        'asset/4.jpg',
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                    ],
+                ),
+                Card(
+                  elevation: 5,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            'asset/1.jpg',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/2.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset(
+                            "asset/4.jpg",
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
 
           // Profile Page
           Center(
             child: Container(
-              width: 400,
-              child: Card(
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
+              width: 350,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    elevation: 10,
+                    child: Column(
+                      children: [
+                        Image.asset("asset/9.jpg"),
+                        SizedBox(height: 5),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        dataList[0]['judul'],
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        dataList[0]['isi'],
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                      SizedBox(height: 16),
                       ElevatedButton(
                         onPressed: () {
-                          // Handle button press
+                          // Handle "About" button press
                         },
-                        child: Text('About...'),
+                        child: Text('About'),
+                      ),
+                      SizedBox(width: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          // Handle "Buku" button press
+                        },
+                        child: Text('Buku'),
                       ),
                     ],
                   ),
-                ),
+                ],
               ),
             ),
           ),
