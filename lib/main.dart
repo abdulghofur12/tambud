@@ -13,19 +13,32 @@ class MyApp extends StatelessWidget {
       title: 'PKTB JABAR',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 57, 18, 125),
+        primaryColor: const Color.fromARGB(255, 57, 18, 125),
+        scaffoldBackgroundColor: Colors.grey[200],
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          bodyText1: TextStyle(
+            fontSize: 16,
+            color: Colors.black,
+          ),
+          button: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -60,257 +73,273 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Image.asset(
+          'asset/11.png',
+          height: 55,
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: [
           // Home Page
           SingleChildScrollView(
-            child: Center(
-              child: Container(
-                height: 1500,
-                width: 500,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        'Temu Karya Taman Budaya Se-Indonesia',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
-                        ),
-                      ),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 24),
+                  Text(
+                    'Selamat Datang di TKTB Jawa Barat',
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor,
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => NewPage(),
-                                ),
-                              );
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: SizedBox(
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Mari kita berkeliling melalui ragam kebudayaan yang memukau, merasakan karya seni yang memikat, dan bersama-sama merayakan kekayaan Indonesia dalam Temu Karya Taman Budaya Se-Indonesia XXII Jawa Barat.',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 32),
+                  Container(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          blurRadius: 4,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Acara Terkini',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => NewPage(),
+                                  ),
+                                );
+                              },
+                              child: Container(
                                 width: 150,
                                 height: 100,
-                                child: Card(
-                                  elevation: 6,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  image: DecorationImage(
+                                    image: AssetImage('asset/1.jpg'),
+                                    fit: BoxFit.cover,
                                   ),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
-                                        image: AssetImage('asset/1.jpg'),
-                                        fit: BoxFit.cover,
-                                      ),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Tertutup',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 16),
-                          InkWell(
-                            onTap:
-                                _navigateToNewImagePage, // Navigate to new page
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: SizedBox(
+                            SizedBox(width: 24),
+                            GestureDetector(
+                              onTap: _navigateToNewImagePage,
+                              child: Container(
                                 width: 150,
                                 height: 100,
-                                child: Card(
-                                  elevation: 6,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  image: DecorationImage(
+                                    image: AssetImage('asset/2.jpg'),
+                                    fit: BoxFit.cover,
                                   ),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      image: DecorationImage(
-                                        image: AssetImage('asset/2.jpg'),
-                                        fit: BoxFit.cover,
-                                      ),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Terbuka',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 24),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Poster Pagelaran',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
+                          ],
                         ),
-                      ),
+                      ],
                     ),
-                    Card(
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            width: 400,
+                  ),
+                  SizedBox(height: 48),
+                  Container(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.1),
+                          blurRadius: 4,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Poster Pagelaran',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ImageDetailPage(
+                                  imagePath: 'asset/7.jpg',
+                                ),
+                              ),
+                            );
+                          },
+                          child: Container(
                             height: 200,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
-                              ),
+                              borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
                                 image: AssetImage('asset/7.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                          SizedBox(height: 8),
-                          Container(
-                            width: 350,
-                            height: 500,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(8),
-                                topRight: Radius.circular(8),
+                        ),
+                        SizedBox(height: 16),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ImageDetailPage(
+                                  imagePath: 'asset/9.jpg',
+                                ),
                               ),
+                            );
+                          },
+                          child: Container(
+                            height: 300,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
                                 image: AssetImage('asset/9.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
 
           // Galeri Page
-          Center(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Card(
-                    elevation: 5,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/3.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/5.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/7.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text(
+                      'Galeri',
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
-                  Card(
-                    elevation: 5,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/1.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/2.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/4.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'asset/3.jpg',
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                      ),
+                      SizedBox(width: 16),
+                      Image.asset(
+                        'asset/5.jpg',
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                      ),
+                      SizedBox(width: 16),
+                      Image.asset(
+                        'asset/7.jpg',
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
                   ),
-                  Card(
-                    elevation: 5,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/1.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/2.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/4.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
+                  SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'asset/1.jpg',
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                      ),
+                      SizedBox(width: 16),
+                      Image.asset(
+                        'asset/2.jpg',
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                      ),
+                      SizedBox(width: 16),
+                      Image.asset(
+                        'asset/4.jpg',
+                        height: 150,
+                        width: 150,
+                        fit: BoxFit.cover,
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -320,39 +349,37 @@ class _MyHomePageState extends State<MyHomePage> {
           // Profile Page
           Center(
             child: Container(
-              height: 400,
-              width: 700,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Card(
-                    elevation: 10,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          dataList[0]['judul'],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        Text(
-                          dataList[0]['isi'],
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+              width: 400,
+              child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        dataList[0]['judul'],
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        dataList[0]['isi'],
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          // Handle button press
+                        },
+                        child: Text('About...'),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle button press
-                    },
-                    child: Text('About...'),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
@@ -381,23 +408,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class NewPage extends StatelessWidget {
-  // ... Existing code for the NewPage class ...
+// Other classes remain the same
 
-  // List data gambar dari assets untuk Hari Ini
+// Other classes remain the same.
+
+class NewPage extends StatelessWidget {
   final List<String> imageListHariIni = [
     'asset/1.jpg',
     'asset/2.jpg',
     'asset/3.jpg',
-    // Tambahkan gambar lainnya jika diperlukan
   ];
 
-  // List data gambar dari assets untuk Besok
   final List<String> imageListBesok = [
     'asset/4.jpg',
     'asset/5.jpg',
     'asset/6.jpg',
-    // Tambahkan gambar lainnya jika diperlukan
   ];
 
   @override
@@ -498,23 +523,16 @@ class NewPage extends StatelessWidget {
 }
 
 class NewImagePage extends StatelessWidget {
-  @override
-  // ... Existing code for the NewPage class ...
-
-  // List data gambar dari assets untuk Hari Ini
   final List<String> imageList1 = [
     'asset/1.jpg',
     'asset/2.jpg',
     'asset/3.jpg',
-    // Tambahkan gambar lainnya jika diperlukan
   ];
 
-  // List data gambar dari assets untuk Besok
   final List<String> imageList2 = [
     'asset/4.jpg',
     'asset/5.jpg',
     'asset/6.jpg',
-    // Tambahkan gambar lainnya jika diperlukan
   ];
 
   @override
@@ -583,22 +601,34 @@ class NewImagePage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: imageList2.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: 150,
-                    height: 150,
-                    child: Card(
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ImageDetailPage(
+                          imagePath: imageList2[index],
+                        ),
                       ),
-                      child: Container(
-                        decoration: BoxDecoration(
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 150,
+                      height: 150,
+                      child: Card(
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                            image: AssetImage(imageList2[index]),
-                            fit: BoxFit.cover,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            image: DecorationImage(
+                              image: AssetImage(imageList2[index]),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -609,6 +639,35 @@ class NewImagePage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ImageDetailPage extends StatelessWidget {
+  final String imagePath;
+
+  ImageDetailPage({required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Poster Detail'),
+      ),
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Hero(
+            tag: 'imageDetail',
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
       ),
     );
   }
