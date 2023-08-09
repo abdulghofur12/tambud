@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Image.asset(
           'asset/11.png',
-          height: 55,
+          height: 50,
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
@@ -92,24 +92,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 24),
-                  Text(
-                    'Selamat Datang di TKTB Jawa Barat',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Mari kita berkeliling melalui ragam kebudayaan yang memukau, merasakan karya seni yang memikat, dan bersama-sama merayakan kekayaan Indonesia dalam Temu Karya Taman Budaya Se-Indonesia XXII Jawa Barat.',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
                   SizedBox(height: 32),
                   Container(
                     padding: EdgeInsets.all(16),
@@ -460,9 +442,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Other classes remain the same
+//=========================================== BATAS CODINGAN UTAMA ==============================================
 
-// Other classes remain the same.
+// Yang INI Buat New Tab TERTUTUP
 
 class NewPage extends StatelessWidget {
   final List<String> imageListHariIni = [
@@ -573,6 +555,8 @@ class NewPage extends StatelessWidget {
     );
   }
 }
+
+// Yang INI Buat New Tab TERBUKA
 
 class NewImagePage extends StatelessWidget {
   final List<String> imageList1 = [
@@ -695,6 +679,8 @@ class NewImagePage extends StatelessWidget {
     );
   }
 }
+
+// Yang INI Buat New Tab POSTER DETAIL
 
 class ImageDetailPage extends StatelessWidget {
   final String imagePath;
