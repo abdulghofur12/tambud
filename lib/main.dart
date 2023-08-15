@@ -447,17 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
 // Yang INI Buat New Tab TERTUTUP
 
 class NewPage extends StatelessWidget {
-  final List<String> imageListHariIni = [
-    'asset/1.jpg',
-    'asset/2.jpg',
-    'asset/3.jpg',
-  ];
-
-  final List<String> imageListBesok = [
-    'asset/4.jpg',
-    'asset/5.jpg',
-    'asset/6.jpg',
-  ];
+  final String imageUrl = 'asset/9.jpg'; // Change this to the desired image URL
 
   @override
   Widget build(BuildContext context) {
@@ -465,97 +455,29 @@ class NewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Acara Tertutup'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Hari Ini',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          child: Card(
+            elevation: 5,
+            child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imageUrl),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(0),
               ),
             ),
           ),
-          Container(
-            height: 150,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: imageListHariIni.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: 150,
-                    height: 150,
-                    child: Card(
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                            image: AssetImage(imageListHariIni[index]),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Besok',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ),
-          Container(
-            height: 150,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: imageListBesok.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: 150,
-                    height: 150,
-                    child: Card(
-                      elevation: 6,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                            image: AssetImage(imageListBesok[index]),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
-
 // Yang INI Buat New Tab TERBUKA
 
 class NewImagePage extends StatelessWidget {
