@@ -446,7 +446,68 @@ class _MyHomePageState extends State<MyHomePage> {
 // Other classes remain the same.
 
 class NewPage extends StatelessWidget {
-  final String imageUrl = 'asset/9.jpg'; // Change this to the desired image URL
+  final List<List<String>> imageLists = [
+    [
+      'asset/h1_jambi.png',
+      'asset/h1_yogya.png',
+      'asset/h1_sulteng.png',
+      'asset/h1_jatim.png'
+    ],
+    ['asset/4.jpg', 'asset/5.jpg', 'asset/6.jpg'],
+
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
+
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
+
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
+    // Add more lists as needed
+    // Add more lists as needed
+  ];
+
+  final List<List<Map<String, String>>> eventLists = [
+    [
+      {"name": "JAMBI", "Title": "Simpul Ngaduk Tanduk", "time": "14:00 AM"},
+      {"name": "D.I. YOGYAKARTA", "Title": "Nyantrik", "time": "14:30 PM"},
+      {
+        "name": "SULAWESI TENGAH",
+        "Title": "Negeri Seribu Megalit",
+        "time": "15:00 PM"
+      },
+      {"name": "JAWA TIMUR", "Title": "Angklung Wangi", "time": "15:30 PM"}
+    ],
+    [
+      {"name": "Event X", "Title": "Venue X", "time": "11:30 AM"},
+      {"name": "Event Y", "Title": "Venue Y", "time": "03:00 PM"},
+      {"name": "Event Z", "Title": "Venue Z", "time": "07:30 PM"},
+    ],
+
+    [
+      {"name": "Event A", "Title": "Venue X", "time": "11:30 AM"},
+      {"name": "Event B", "Title": "Venue Y", "time": "03:00 PM"},
+      {"name": "Event C", "Title": "Venue Z", "time": "07:30 PM"},
+    ],
+
+    [
+      {"name": "Event O", "Title": "Venue X", "time": "11:30 AM"},
+      {"name": "Event P", "Title": "Venue Y", "time": "03:00 PM"},
+      {"name": "Event Q", "Title": "Venue Z", "time": "07:30 PM"},
+    ],
+
+    [
+      {"name": "Event H", "Title": "Venue X", "time": "11:30 AM"},
+      {"name": "Event I", "Title": "Venue Y", "time": "03:00 PM"},
+      {"name": "Event J", "Title": "Venue Z", "time": "07:30 PM"},
+    ],
+    // Add more event lists as needed
+  ];
+
+  final List<String> dayTitles = [
+    'Senin, 21 Agustus 2023',
+    'Selasa, 22 Agustus 2023',
+    'Rabu, 23 Agustus 2023',
+    'Kamis, 24 Agustus 2023',
+    'Jumat, 25 Agustus 2023'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -454,29 +515,214 @@ class NewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Acara Tertutup'),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height,
-          child: Card(
-            elevation: 5,
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imageUrl),
-                  fit: BoxFit.cover,
+      body: ListView.builder(
+        itemCount: eventLists.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  dayTitles[index],
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(0),
-              ),
+                SizedBox(height: 16),
+                Container(
+                  height: 255,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: eventLists[index].length,
+                    itemBuilder: (context, innerIndex) {
+                      final event = eventLists[index][innerIndex];
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ImageDetailPage(
+                                imagePath: imageLists[index][innerIndex],
+                              ),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 12),
+                          child: Card(
+                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(16)),
+                                  child: Image.asset(
+                                    imageLists[index][innerIndex],
+                                    width: 180,
+                                    height: 160,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        event["name"]!,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      SizedBox(height: 6),
+                                      Text(
+                                        event["Title"]!,
+                                        style: TextStyle(
+                                          color: Colors.grey[600],
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      SizedBox(height: 4),
+                                      Text(
+                                        event["time"]!,
+                                        style: TextStyle(
+                                          color: Colors.grey[600],
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
 }
+
+/*
+class NewPage extends StatelessWidget {
+  final List<List<String>> imageLists = [
+    [
+      'asset/h1_jambi.png',
+      'asset/h1_yogya.png',
+      'asset/h1_sulteng.png',
+      'asset/h1_jatim.png'
+    ],
+
+    ['asset/4.jpg', 'asset/5.jpg', 'asset/6.jpg'],
+
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
+
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
+
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
+    // Add more lists as needed
+  ];
+
+  final List<String> dayTitles = [
+    'Senin, 21 Agustus 2023',
+    'Selasa, 22 Agustus 2023',
+    'Rabu, 23 Agustus 2023',
+    'Kamis, 24 Agustus 2023',
+    'Jumat, 25 Agustus 2023'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Acara Tertutup'),
+      ),
+      body: ListView.builder(
+        itemCount: imageLists.length,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  dayTitles[index],
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Container(
+                  height: 150,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: imageLists[index].length,
+                    itemBuilder: (context, innerIndex) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ImageDetailPage(
+                                imagePath: imageLists[index][innerIndex],
+                              ),
+                            ),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SizedBox(
+                            width: 150,
+                            height: 150,
+                            child: Card(
+                              elevation: 6,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        imageLists[index][innerIndex]),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+*/
 
 // Yang INI Buat New Tab TERBUKA
 
@@ -611,7 +857,7 @@ class ImageDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Poster Detail'),
+        title: Text('Detail Page'),
       ),
       body: Center(
         child: GestureDetector(
