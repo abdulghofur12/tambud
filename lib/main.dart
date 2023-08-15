@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Image.asset(
           'asset/11.png',
-          height: 50,
+          height: 55,
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
@@ -406,9 +407,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       SizedBox(width: 16),
                       ElevatedButton(
-                        onPressed: () {
-                          // Handle "Buku" button press
-                        },
+                        onPressed: _launchURL,
                         child: Text('Buku'),
                       ),
                     ],
@@ -442,9 +441,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-//=========================================== BATAS CODINGAN UTAMA ==============================================
+// Other classes remain the same
 
-// Yang INI Buat New Tab TERTUTUP
+// Other classes remain the same.
 
 class NewPage extends StatelessWidget {
   final String imageUrl = 'asset/9.jpg'; // Change this to the desired image URL
@@ -478,6 +477,7 @@ class NewPage extends StatelessWidget {
     );
   }
 }
+
 // Yang INI Buat New Tab TERBUKA
 
 class NewImagePage extends StatelessWidget {
@@ -602,8 +602,6 @@ class NewImagePage extends StatelessWidget {
   }
 }
 
-// Yang INI Buat New Tab POSTER DETAIL
-
 class ImageDetailPage extends StatelessWidget {
   final String imagePath;
 
@@ -630,5 +628,13 @@ class ImageDetailPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+_launchURL() async {
+  final Uri url = Uri.parse(
+      'https://drive.google.com/file/d/1QSoBm7z_zHnEfohph0yoUIc4R4VDTe7m/view');
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
   }
 }
