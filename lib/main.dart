@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -236,7 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => ImageDetailPage(
-                                  imagePath: 'asset/9.jpg',
+                                  imagePath: 'asset/13.png',
                                 ),
                               ),
                             );
@@ -246,7 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
-                                image: AssetImage('asset/9.jpg'),
+                                image: AssetImage('asset/13.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -390,7 +391,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     elevation: 10,
                     child: Column(
                       children: [
-                        Image.asset("asset/9.jpg"),
+                        Image.asset("asset/13.png"),
                         SizedBox(height: 5),
                       ],
                     ),
@@ -619,110 +620,6 @@ class NewPage extends StatelessWidget {
     );
   }
 }
-
-/*
-class NewPage extends StatelessWidget {
-  final List<List<String>> imageLists = [
-    [
-      'asset/h1_jambi.png',
-      'asset/h1_yogya.png',
-      'asset/h1_sulteng.png',
-      'asset/h1_jatim.png'
-    ],
-
-    ['asset/4.jpg', 'asset/5.jpg', 'asset/6.jpg'],
-
-    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
-
-    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
-
-    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
-    // Add more lists as needed
-  ];
-
-  final List<String> dayTitles = [
-    'Senin, 21 Agustus 2023',
-    'Selasa, 22 Agustus 2023',
-    'Rabu, 23 Agustus 2023',
-    'Kamis, 24 Agustus 2023',
-    'Jumat, 25 Agustus 2023'
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Acara Tertutup'),
-      ),
-      body: ListView.builder(
-        itemCount: imageLists.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  dayTitles[index],
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Container(
-                  height: 150,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: imageLists[index].length,
-                    itemBuilder: (context, innerIndex) {
-                      return GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ImageDetailPage(
-                                imagePath: imageLists[index][innerIndex],
-                              ),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: 150,
-                            height: 150,
-                            child: Card(
-                              elevation: 6,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        imageLists[index][innerIndex]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-*/
 
 // Yang INI Buat New Tab TERBUKA
 
