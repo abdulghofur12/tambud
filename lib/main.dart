@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'PKTB JABAR',
+      title: 'TKTB JABAR',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color.fromARGB(255, 57, 18, 125),
@@ -442,7 +442,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 // Other classes remain the same
-
+//======================BATAS MAIN===================================================
 // Other classes remain the same.
 
 class NewPage extends StatelessWidget {
@@ -453,7 +453,14 @@ class NewPage extends StatelessWidget {
       'asset/h1_sulteng.png',
       'asset/h1_jatim.png'
     ],
-    ['asset/4.jpg', 'asset/5.jpg', 'asset/6.jpg'],
+    [
+      'asset/h2_sulsel.png',
+      'asset/h2_kaltim.png',
+      'asset/h2_sulteng.png',
+      'asset/h2_jakarta.png',
+      'asset/h2_banten.png',
+      'asset/h2_jateng.png'
+    ],
 
     ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
 
@@ -466,19 +473,55 @@ class NewPage extends StatelessWidget {
 
   final List<List<Map<String, String>>> eventLists = [
     [
-      {"name": "JAMBI", "Title": "Simpul Ngaduk Tanduk", "time": "14:00 AM"},
-      {"name": "D.I. YOGYAKARTA", "Title": "Nyantrik", "time": "14:30 PM"},
       {
-        "name": "SULAWESI TENGAH",
-        "Title": "Negeri Seribu Megalit",
-        "time": "15:00 PM"
+        "name": "Jambi",
+        "Title": "Simpul Ngaduk Tanduk",
+        "time": "14:00 - 14:30 PM"
       },
-      {"name": "JAWA TIMUR", "Title": "Angklung Wangi", "time": "15:30 PM"}
+      {
+        "name": "D.I. Yogyakarta",
+        "Title": "Nyantrik",
+        "time": "14:30 - 15:00 PM"
+      },
+      {
+        "name": "Sulawesi Tengah",
+        "Title": "Negeri Seribu Megalit",
+        "time": "15:00 - 15:30 PM"
+      },
+      {
+        "name": "Jawa Timur",
+        "Title": "Angklung Wangi",
+        "time": "15:30 - 16:00 PM"
+      }
     ],
+
     [
-      {"name": "Event X", "Title": "Venue X", "time": "11:30 AM"},
-      {"name": "Event Y", "Title": "Venue Y", "time": "03:00 PM"},
-      {"name": "Event Z", "Title": "Venue Z", "time": "07:30 PM"},
+      {
+        "name": "Sulawesi Selatan",
+        "Title": "Tari Appakase're",
+        "time": "16:30 - 17:00 PM"
+      },
+      {
+        "name": "Kalimantan Timur",
+        "Title": "Sang Mulawarman",
+        "time": "17:00 - 17:30 PM"
+      },
+      {
+        "name": "Sulawesi Tenggara",
+        "Title": "Karia(Pingitan)",
+        "time": "19:30 - 20:00 PM"
+      },
+      {
+        "name": "D.K.I Jakarta",
+        "Title": "Tari Warna Warni",
+        "time": "20:00 - 20:30 PM"
+      },
+      {"name": "Banten", "Title": "Tuah Kaibon", "time": "20:30 - 21:00 PM"},
+      {
+        "name": "Jawa Tengah",
+        "Title": "Rewanda Rewaka",
+        "time": "21:00 - 21:30 PM"
+      },
     ],
 
     [
@@ -620,110 +663,6 @@ class NewPage extends StatelessWidget {
   }
 }
 
-/*
-class NewPage extends StatelessWidget {
-  final List<List<String>> imageLists = [
-    [
-      'asset/h1_jambi.png',
-      'asset/h1_yogya.png',
-      'asset/h1_sulteng.png',
-      'asset/h1_jatim.png'
-    ],
-
-    ['asset/4.jpg', 'asset/5.jpg', 'asset/6.jpg'],
-
-    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
-
-    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
-
-    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
-    // Add more lists as needed
-  ];
-
-  final List<String> dayTitles = [
-    'Senin, 21 Agustus 2023',
-    'Selasa, 22 Agustus 2023',
-    'Rabu, 23 Agustus 2023',
-    'Kamis, 24 Agustus 2023',
-    'Jumat, 25 Agustus 2023'
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Acara Tertutup'),
-      ),
-      body: ListView.builder(
-        itemCount: imageLists.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  dayTitles[index],
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Container(
-                  height: 150,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: imageLists[index].length,
-                    itemBuilder: (context, innerIndex) {
-                      return GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ImageDetailPage(
-                                imagePath: imageLists[index][innerIndex],
-                              ),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SizedBox(
-                            width: 150,
-                            height: 150,
-                            child: Card(
-                              elevation: 6,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        imageLists[index][innerIndex]),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-*/
-
 // Yang INI Buat New Tab TERBUKA
 
 class NewImagePage extends StatelessWidget {
@@ -848,6 +787,8 @@ class NewImagePage extends StatelessWidget {
   }
 }
 
+// UNTUK POSTER atau IMAGE DETAIL
+
 class ImageDetailPage extends StatelessWidget {
   final String imagePath;
 
@@ -857,7 +798,7 @@ class ImageDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Page'),
+        title: Text('Poster Detail'),
       ),
       body: Center(
         child: GestureDetector(
