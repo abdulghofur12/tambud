@@ -57,6 +57,12 @@ flutter:
     - asset/h1_jatim.png
     - asset/h1_sulteng.png
     - asset/h1_yogya.png
+    - asset/h2_banten.png
+    - asset/h2_jakarta.png
+    - asset/h2_jateng.png
+    - asset/h2_kaltim.png
+    - asset/h2_sulsel.png
+    - asset/h2_sulteng.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
