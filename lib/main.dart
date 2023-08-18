@@ -236,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => ImageDetailPage(
-                                  imagePath: 'asset/9.jpg',
+                                  imagePath: 'asset/13.png',
                                 ),
                               ),
                             );
@@ -246,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
-                                image: AssetImage('asset/9.jpg'),
+                                image: AssetImage('asset/13.png'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -264,116 +264,10 @@ class _MyHomePageState extends State<MyHomePage> {
           Center(
             child: Column(
               children: [
-                Card(
-                  elevation: 5,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/9.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/10.png",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/11.png",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/1.jpg',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/9.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/10.png",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            'asset/11.png',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/9.jpg",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Image.asset(
-                            "asset/11.png",
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: _launchURL2,
+                  child: Text('vidio'),
                 ),
               ],
             ),
@@ -390,7 +284,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     elevation: 10,
                     child: Column(
                       children: [
-                        Image.asset("asset/9.jpg"),
+                        Image.asset("asset/13.png"),
                         SizedBox(height: 5),
                       ],
                     ),
@@ -462,11 +356,11 @@ class NewPage extends StatelessWidget {
       'asset/h2_jateng.png'
     ],
 
-    ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
 
-    ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
 
-    ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
+    ['asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg'],
     // Add more lists as needed
     // Add more lists as needed
   ];
@@ -666,33 +560,122 @@ class NewPage extends StatelessWidget {
 // Yang INI Buat New Tab TERBUKA
 
 class NewImagePage extends StatelessWidget {
-  final String imageUrl = 'asset/9.jpg'; // Change this to the desired image URL
+  final List<String> imageList1 = [
+    'asset/1.jpg',
+    'asset/2.jpg',
+    'asset/3.jpg',
+  ];
+
+  final List<String> imageList2 = [
+    'asset/4.jpg',
+    'asset/5.jpg',
+    'asset/6.jpg',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Acara Tertutup'),
+        title: Text('Acara Terbuka'),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height,
-          child: Card(
-            elevation: 5,
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imageUrl),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(0),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Pagelaran',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
           ),
-        ),
+          Container(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: imageList1.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Card(
+                      elevation: 6,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                            image: AssetImage(imageList1[index]),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Kuliner',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Container(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: imageList2.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ImageDetailPage(
+                          imagePath: imageList2[index],
+                        ),
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 150,
+                      height: 150,
+                      child: Card(
+                        elevation: 6,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            image: DecorationImage(
+                              image: AssetImage(imageList2[index]),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -732,6 +715,14 @@ class ImageDetailPage extends StatelessWidget {
 _launchURL() async {
   final Uri url = Uri.parse(
       'https://drive.google.com/file/d/1QSoBm7z_zHnEfohph0yoUIc4R4VDTe7m/view');
+  if (!await launchUrl(url)) {
+    throw Exception('Could not launch $url');
+  }
+}
+
+_launchURL2() async {
+  final Uri url =
+      Uri.parse('https://www.youtube.com/@uptdpengelolaankebudayaand210');
   if (!await launchUrl(url)) {
     throw Exception('Could not launch $url');
   }
