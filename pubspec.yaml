@@ -62,6 +62,16 @@ flutter:
     - asset/h3_ntt.png
     - asset/h3_sulut.png
     - asset/h3_sumut.png
+    - asset/h4_kalbar.png
+    - asset/h4_kalsel.png
+    - asset/h4_kalteng.png
+    - asset/h4_lampung.png
+    - asset/h4_papua.png
+    - asset/h5_aceh.png
+    - asset/h5_jabar.png
+    - asset/h5_riau.png
+    - asset/h5_sumbar.png
+    - asset/h5_sumsel.png
     - asset/terbuka.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

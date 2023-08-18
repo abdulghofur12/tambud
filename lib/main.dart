@@ -365,9 +365,21 @@ class NewPage extends StatelessWidget {
       'asset/h3_sumut.png'
     ],
 
-    ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
+    [
+      'asset/h4_kalteng.png',
+      'asset/h4_kalbar.png',
+      'asset/h4_lampung.png',
+      'asset/h4_papua.png',
+      'asset/h4_kalsel.png'
+    ],
 
-    ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
+    [
+      'asset/h5_riau.png',
+      'asset/h5_sumbar.png',
+      'asset/h5_sumsel.png',
+      'asset/h5_jabar.png',
+      'asset/h5_aceh.png'
+    ],
     // Add more lists as needed
     // Add more lists as needed
   ];
@@ -455,15 +467,51 @@ class NewPage extends StatelessWidget {
     ],
 
     [
-      {"name": "Event O", "Title": "Venue X", "time": "11:30 AM"},
-      {"name": "Event P", "Title": "Venue Y", "time": "03:00 PM"},
-      {"name": "Event Q", "Title": "Venue Z", "time": "07:30 PM"},
+      {
+        "name": "Kalimantan Tengah",
+        "Title": "Pahiau Hum. Salekap",
+        "time": "16:30 - 17:00 PM"
+      },
+      {
+        "name": "Kalimantan Barat",
+        "Title": "*no confirmation yet*",
+        "time": "17:00 - 17:30 PM"
+      },
+      {"name": "Lampung", "Title": "Minjak Mawas", "time": "19:30 - 20:00 PM"},
+      {
+        "name": "Papua",
+        "Title": "Ani Rei (Pesta Panen)",
+        "time": "20:00 - 20:30 PM"
+      },
+      {
+        "name": "Kalimantan Selatan",
+        "Title": "*no confirmation yet*",
+        "time": "20:30 - 21:00 PM"
+      }
     ],
 
     [
-      {"name": "Event H", "Title": "Venue X", "time": "11:30 AM"},
-      {"name": "Event I", "Title": "Venue Y", "time": "03:00 PM"},
-      {"name": "Event J", "Title": "Venue Z", "time": "07:30 PM"},
+      {
+        "name": "Kepulauan Riau",
+        "Title": "*no confirmation yet*",
+        "time": "16:30 - 17:00 PM"
+      },
+      {
+        "name": "Sumatra Barat",
+        "Title": "*no confirmation yet*",
+        "time": "17:00 - 17:30 PM"
+      },
+      {
+        "name": "Sumatra Selatan",
+        "Title": "Djaya Sidhayatra",
+        "time": "19:30 - 20:00 PM"
+      },
+      {
+        "name": "Jawa Barat",
+        "Title": "*no confirmation yet*",
+        "time": "20:00 - 20:30 PM"
+      },
+      {"name": "Aceh", "Title": "Ratoh kipah", "time": "20:30 - 21:00 PM"}
     ],
     // Add more event lists as needed
   ];
