@@ -462,7 +462,14 @@ class NewPage extends StatelessWidget {
       'asset/h2_jateng.png'
     ],
 
-    ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
+    [
+      'asset/h3_maluku.png',
+      'asset/h3_kalut.png',
+      'asset/h3_ntt.png',
+      'asset/h3_bengkulu.png',
+      'asset/h3_sulut.png',
+      'asset/h3_sumut.png'
+    ],
 
     ['asset/1.jpg', 'asset/1.jpg', 'asset/1.jpg'],
 
@@ -525,9 +532,20 @@ class NewPage extends StatelessWidget {
     ],
 
     [
-      {"name": "Event A", "Title": "Venue X", "time": "11:30 AM"},
-      {"name": "Event B", "Title": "Venue Y", "time": "03:00 PM"},
-      {"name": "Event C", "Title": "Venue Z", "time": "07:30 PM"},
+      {"name": "Maluku", "Title": "Tari Hotu", "time": "11:30 AM"},
+      {"name": "Kalimantan Utara", "Title": "Tari Hotu", "time": "03:00 PM"},
+      {"name": "Nusa T Timur", "Title": "Tari Hantama", "time": "07:30 PM"},
+      {
+        "name": "Bengkulu",
+        "Title": "Rentak Melayu Rafflesia",
+        "time": "11:30 AM"
+      },
+      {
+        "name": "Sulawesi Utara",
+        "Title": "MotoBatu Molintak K. T",
+        "time": "03:00 PM"
+      },
+      {"name": "Sumatra Utara", "Title": "Juma Nande", "time": "07:30 PM"}
     ],
 
     [
@@ -672,7 +690,7 @@ class NewImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Acara Tertutup'),
+        title: Text('Acara Terbuka'),
       ),
       body: SingleChildScrollView(
         child: Container(

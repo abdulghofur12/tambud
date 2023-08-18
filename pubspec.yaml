@@ -54,6 +54,12 @@ flutter:
     - asset/h2_kaltim.png
     - asset/h2_sulsel.png
     - asset/h2_sulteng.png
+    - asset/h3_bengkulu.png
+    - asset/h3_kalut.png
+    - asset/h3_maluku.png
+    - asset/h3_ntt.png
+    - asset/h3_sulut.png
+    - asset/h3_sumut.png
     - asset/terbuka.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
