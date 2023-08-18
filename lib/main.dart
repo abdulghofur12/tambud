@@ -426,20 +426,32 @@ class NewPage extends StatelessWidget {
     ],
 
     [
-      {"name": "Maluku", "Title": "Tari Hotu", "time": "11:30 AM"},
-      {"name": "Kalimantan Utara", "Title": "Tari Hotu", "time": "03:00 PM"},
-      {"name": "Nusa T Timur", "Title": "Tari Hantama", "time": "07:30 PM"},
+      {"name": "Maluku", "Title": "Tari Hotu", "time": "16:30 - 17:00 PM"},
+      {
+        "name": "Kalimantan Utara",
+        "Title": "Tari Hotu",
+        "time": "17:00 - 17:30 PM"
+      },
+      {
+        "name": "Nusa T Timur",
+        "Title": "Tari Hantama",
+        "time": "19:30 - 20:00 PM"
+      },
       {
         "name": "Bengkulu",
         "Title": "Rentak Melayu Rafflesia",
-        "time": "11:30 AM"
+        "time": "20:00 - 20:30 PM"
       },
       {
         "name": "Sulawesi Utara",
         "Title": "MotoBatu Molintak K. T",
-        "time": "03:00 PM"
+        "time": "20:30 - 21:00 PM"
       },
-      {"name": "Sumatra Utara", "Title": "Juma Nande", "time": "07:30 PM"}
+      {
+        "name": "Sumatra Utara",
+        "Title": "Juma Nande",
+        "time": "21:00 - 21:30 PM"
+      }
     ],
 
     [
