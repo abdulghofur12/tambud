@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8),
                                   image: DecorationImage(
-                                    image: AssetImage('asset/2.jpg'),
+                                    image: AssetImage('asset/terbuka.png'),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
