@@ -262,14 +262,33 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Galeri Page
           Center(
-            child: Column(
-              children: [
-                SizedBox(width: 16),
-                ElevatedButton(
-                  onPressed: _launchURL2,
-                  child: Text('vidio'),
-                ),
-              ],
+            child: Container(
+              width: 350,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  Card(
+                    elevation: 10,
+                    child: Column(
+                      children: [
+                        Image.asset("asset/13.png"),
+                        SizedBox(height: 5),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(width: 16),
+                      ElevatedButton(
+                        onPressed: _launchURL2,
+                        child: Text('vidio'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
 
@@ -703,15 +722,14 @@ class ImageDetailPage extends StatelessWidget {
 
 _launchURL() async {
   final Uri url = Uri.parse(
-      'https://drive.google.com/file/d/1QSoBm7z_zHnEfohph0yoUIc4R4VDTe7m/view');
+      'https://drive.google.com/drive/u/0/folders/172lteJkI_d70wQrBzMnNdNrXi-45MNTd');
   if (!await launchUrl(url)) {
     throw Exception('Could not launch $url');
   }
 }
 
 _launchURL2() async {
-  final Uri url =
-      Uri.parse('https://www.youtube.com/@uptdpengelolaankebudayaand210');
+  final Uri url = Uri.parse('https://www.youtube.com/@disparbudjabar9265');
   if (!await launchUrl(url)) {
     throw Exception('Could not launch $url');
   }
