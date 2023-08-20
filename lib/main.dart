@@ -567,7 +567,7 @@ class NewPage extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 Container(
-                  height: 255,
+                  height: 275,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: eventLists[index].length,
@@ -657,7 +657,10 @@ class NewPage extends StatelessWidget {
 // Yang INI Buat New Tab TERBUKA
 
 class NewImagePage extends StatelessWidget {
-  final String imageUrl = 'asset/9.jpg'; // Change this to the desired image URL
+  final List<String> imageUrls = [
+    'asset/9.jpg', // Change these to the desired image URLs
+    'asset/10.jpg', // Change these to the desired image URLs
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -666,23 +669,41 @@ class NewImagePage extends StatelessWidget {
         title: Text('Acara Terbuka'),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height,
-          child: Card(
-            elevation: 5,
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imageUrl),
-                  fit: BoxFit.cover,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Hero(
+                      tag: 'imageDetail',
+                      child: Image.asset(
+                        imageUrls[0],
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(0),
-              ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Hero(
+                      tag: 'imageDetail',
+                      child: Image.asset(
+                        imageUrls[1],
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
+          ],
         ),
       ),
     );
